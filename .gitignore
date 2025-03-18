@@ -1,0 +1,46 @@
+# Avoid accidental upload of the Sketch and Figma design files
+#####################################################
+## Please do not remove lines 5 and 6 - thanks! 🙂 ##
+#####################################################
+*.sketch
+*.fig
+
+# Avoid accidental XD upload if you convert the design file
+###############################################
+## Please do not remove line 12 - thanks! 🙂 ##
+###############################################
+*.xd
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Webpack y archivos de build
+dist/
+.bundle/
+.cache/
+*.log
+
+# Configuración del editor de código
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Dependencias instaladas manualmente
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+
+
+
+# Avoid your project being littered with annoying .DS_Store files!
+.DS_Store
+.prettierignore
