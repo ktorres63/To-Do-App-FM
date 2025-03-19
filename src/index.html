@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <div class="background">
+      <img src="./images/bg-mobile-light.jpg" alt="background" />
+    </div>
+    <div class="container">
+      <header>
+        <h1>TODO</h1>
+        <button id="toggleTheme">
+          <img src="./images/icon-moon.svg" alt="toogle Theme">
+        </button>
+      </header>
+      <main>
+        <form class="todo-input">
+          <span class="round"></span>
+          <input type="text" id="newTodo" placeholder="Create a new todo..." />
+        </form>
+        <section class="list-container">
+          <ul id="todoList"></ul>
+          <!-- Add dynamic number -->
+          <p># items left</p>
+          <button id="clearCompleted">Clear Completed</button>
+        </section>
+        <section>
+          <button id="btn-All">All</button>
+          <button id="btn-active">Active</button> 
+          <button id="btn-completed">Completed</button>
+        </section>
+      </main>
+      <p>Drag and drop to reorder list</p>
+    </div>
+    <div class="attribution" style="display: none">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">ktorres63</a>.
+    </div>
+  </body>
+</html>
