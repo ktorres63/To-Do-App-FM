@@ -31,18 +31,41 @@
           <input type="text" id="newTodo" placeholder="Create a new todo..." />
         </form>
         <section class="list-container">
-          <ul id="todoList"></ul>
+          <ul id="todoList">
+            <li class="todo-item">
+              <div class="li-text">
+                <span class="round"></span>
+                <p>Example 001</p>
+              </div>
+              <button>
+                <img src="./images/icon-cross.svg" alt="">
+              </button>
+            </li>
+            <li class="todo-item">
+              <div class="li-text">
+                <span class="round"></span>
+                <p>Example 002</p>
+              </div>
+              <button>
+                <img src="./images/icon-cross.svg" alt="">
+              </button>
+            </li>
+            
+          
+          </ul>
           <!-- Add dynamic number -->
-          <p># items left</p>
-          <button id="clearCompleted">Clear Completed</button>
+          <div class="footer-list">
+            <p># items left</p>
+            <button id="clearCompleted">Clear Completed</button>
+          </div>
         </section>
-        <section>
+        <section class="buttons">
           <button id="btn-All">All</button>
           <button id="btn-active">Active</button> 
           <button id="btn-completed">Completed</button>
         </section>
       </main>
-      <p>Drag and drop to reorder list</p>
+      <p class="message-drag">Drag and drop to reorder list</p>
     </div>
     <div class="attribution" style="display: none">
       Challenge by

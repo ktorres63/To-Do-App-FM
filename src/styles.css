@@ -34,6 +34,7 @@
 
 body {
   font-size: 18px;
+  font-weight: 400;
   color: var(--dark-grayish-blue);
   height: 100vh;
   background-color: var(--very-light-grayish-blue);
@@ -67,18 +68,19 @@ h1 {
   gap: 2.5rem;
   flex-direction: column;
 }
-
 main {
   display: flex;
   gap: 1rem;
   flex-direction: column;
 }
 form.todo-input {
+  height: 3.5rem;
   display: flex;
   gap: 0.5rem;
   background-color: var(--very-light-gray);
-  padding: 0.8rem;
+  padding: 0.8rem 1.3rem;
   border-radius: var(--border-radius);
+  align-items: center;
 }
 form span.round {
   width: 25px;
@@ -88,17 +90,88 @@ form span.round {
 }
 form #newTodo {
   border: none;
+  background-color: var(--very-light-gray);
   font-size: 18px;
   flex: 1;
-  position: relative;
-  top: 3px;
   color: var(--dark-grayish-blue);
-
 }
 section.list-container {
   display: flex;
-  gap: 0.5rem;
-  background-color: var(--very-light-gray);
-  padding: 0.8rem;
+  flex-direction: column;
+  gap: 0.2rem;
+  background-color: var(--light-grayish-blue);
   border-radius: var(--border-radius);
+  overflow: hidden;
+}
+ul#todoList{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+ul#todoList li{
+  display: flex;
+  height: 3.5rem;
+  background-color: var(--very-light-gray);
+  padding: 0.8rem 1.3rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.li-text{
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+  color: var(--dark-grayish-blue);
+  font-weight: 700;
+}
+div.li-text>span.round {
+  align-self: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--light-grayish-blue);
+}
+li.todo-item>button{
+  background-color: var(--very-light-gray);
+  border: none;
+}
+div.footer-list {
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  height: 3.5rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--very-light-gray);
+  padding: 0.8rem 1.3rem;
+}
+
+div.footer-list button{
+  color: var(--dark-grayish-blue);
+  background: none;
+  border: none;
+  font-size: 15px;
+}
+
+section.buttons {
+  display: flex;
+  height: 3.5rem;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-light-gray);
+  border-radius: var(--border-radius);
+}
+section.buttons button {
+  color: var(--dark-grayish-blue);
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+p.message-drag {
+  align-self: center;
 }
