@@ -1,28 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
-  /*  */
+
   --border-radius: 0.4rem;
+  --bg-image: url("./images/bg-mobile-light.jpg");
 
   /* Primary */
   --bright-blue: hsl(220, 98%, 61%);
   --check-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 
   /* Light Theme */
-  --very-light-gray: hsl(0, 0%, 98%);
-  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --item-background: hsl(0, 0%, 98%);
+  --title: hsl(0, 0%, 98%);
+
+  --background: hsl(236, 33%, 92%);
   --light-grayish-blue: hsl(233, 11%, 84%);
-  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --text-primary: hsl(236, 9%, 61%);
   --very-dark-grayish-blue: hsl(235, 19%, 35%);
 
-  /* Dark Theme */
+  /* Dark Theme
   --very-dark-blue: hsl(235, 21%, 11%);
   --very-dark-desaturated-blue: hsl(235, 24%, 19%);
   --light-grayish-blue-dark: hsl(234, 39%, 85%);
   --light-grayish-blue-hover: hsl(236, 33%, 92%);
-  --dark-grayish-blue-dark: hsl(234, 11%, 52%);
+  --text-primary-dark: hsl(234, 11%, 52%);
   --very-dark-grayish-blue-dark: hsl(233, 14%, 35%);
-  --very-dark-grayish-blue-darker: hsl(237, 14%, 26%);
+  --very-dark-grayish-blue-darker: hsl(237, 14%, 26%); */
+}
+
+.dark-mode{
+  --bg-image: url("./images/bg-mobile-dark.jpg");
+  --background:hsl(235, 21%, 11%);
+  --text-primary:hsl(234, 11%, 52%);
+  --item-background: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+
 }
 
 * {
@@ -37,12 +49,12 @@ body {
   justify-content: center;
   font-size: 18px;
   font-weight: 400;
-  color: var(--dark-grayish-blue);
+  color: var(--text-primary);
   height: 100vh;
-  background-color: var(--very-light-grayish-blue);
+  background-color: var(--background);
 }
 .background {
-  background-image: url("./images/bg-mobile-light.jpg");
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -53,9 +65,6 @@ body {
   height: 200px;
   display: block;
 }
-
-
-
 header {
   display: flex;
   flex-direction: row;
@@ -71,7 +80,7 @@ h1 {
   top: 5px;
   letter-spacing: 0.5rem;
   font-weight: 700;
-  color: var(--very-light-gray);
+  color: var(--title);
 }
 .container {
   padding-top: 2.5rem;
@@ -88,7 +97,7 @@ form.todo-input {
   height: 3.5rem;
   display: flex;
   gap: 0.5rem;
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   padding: 0.8rem 1.3rem;
   border-radius: var(--border-radius);
   align-items: center;
@@ -101,10 +110,10 @@ form span.round {
 }
 form #newTodo {
   border: none;
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   font-size: 18px;
   flex: 1;
-  color: var(--dark-grayish-blue);
+  color: var(--text-primary);
 }
 section.list-container {
   display: flex;
@@ -117,13 +126,13 @@ section.list-container {
 ul#todoList {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
 }
 
 ul#todoList li {
   display: flex;
   height: 3.5rem;
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   padding: 0.8rem 1.3rem;
   justify-content: space-between;
   align-items: center;
@@ -133,7 +142,7 @@ div.li-text {
   display: flex;
   align-items: end;
   gap: 0.5rem;
-  color: var(--dark-grayish-blue);
+  color: var(--text-primary);
   font-weight: 700;
 }
 div.li-text > span.round {
@@ -144,7 +153,7 @@ div.li-text > span.round {
   border: 2px solid var(--light-grayish-blue);
 }
 li.todo-item > button{
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   border: none;
 }
 div.footer-list {
@@ -154,15 +163,17 @@ div.footer-list {
   height: 3.5rem;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   padding: 0.8rem 1.3rem;
 }
 
 div.footer-list a{
-  color: var(--dark-grayish-blue);
+  color: var(--text-primary);
   background: none;
   border: none;
   font-size: 15px;
+  text-decoration: none;
+  font-weight: 700;
 }
 div.footer-list>.buttons-footer{
   display:none
@@ -173,24 +184,26 @@ section.buttons {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  background-color: var(--very-light-gray);
+  background-color: var(--item-background);
   border-radius: var(--border-radius);
 }
 section.buttons a{
-  color: var(--dark-grayish-blue);
-  background: none;
-  border: none;
+  color: var(--text-primary);
   font-size: 18px;
   font-weight: 700;
+  text-decoration: none;
 }
 
 p.message-drag {
   align-self: center;
 }
 /* desktop */
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
+  :root{
+    --bg-image:url("./images/bg-desktop-light.jpg");
+  }
   .background {
-    background-image: url("./images/bg-desktop-light.jpg"); /* Cambia la imagen de fondo para desktop */
+    background-image: var(--bg-image); 
     height: 300px; /* Ajusta la altura para desktop */
   }
   .container {
@@ -204,5 +217,14 @@ p.message-drag {
   div.footer-list>.buttons-footer{
     display:flex;
     gap:2rem;
+  }
+  section.buttons-footer a{
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .dark-mode{
+    --bg-image: url("./images/bg-desktop-dark.jpg");
   }
 }
