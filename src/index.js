@@ -6,6 +6,9 @@ import crossIcon from "./images/icon-cross.svg"
 const toogleDarkMode = document.getElementById("toggleTheme");
 const body = document.body;
 const icon = document.getElementById("darkModeIcon");
+const todoList = document.getElementById("todoList");
+const input = document.getElementById("newTodo");
+
 
 if(localStorage.getItem("dark-mode") == "enabled"){
   body.classList.add("dark-mode");
@@ -24,19 +27,14 @@ toogleDarkMode.addEventListener("click", () => {
     icon.src = moonIcon;
   }
 });
+// Load TODOS
+document.addEventListener("DOMContentLoaded", loadTodos)
 
-document
-  .querySelector(".todo-input")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+//Add To Do
 
-    const input = document.getElementById("newTodo");
-    const todoText = input.value;
-
-    if (todoText == "") return;
-
-    const li = document.createElement("li");
-    li.classList.add("todo-item")
+function addTodo(todoText, save = true){
+  const li = document.createElement("li");
+  li.classList.add("todo-item")
     li.innerHTML = ` 
     <div class="li-text">
       <span class="round"></span>
@@ -46,11 +44,47 @@ document
       <img src=${crossIcon}>
     </button> `;
 
-    document.getElementById("todoList").appendChild(li);
-
-    input.value = "";
+    todoList.appendChild(li);
+    
+    // Delete To Do
 
     li.querySelector(".delete-btn").addEventListener("click", function (){
       li.remove();
+      saveTodos();
     });
+
+    if(save) saveTodos();
+}
+
+//Save in Local Storage
+
+function saveTodos(){
+  const todos = [];
+  document.querySelectorAll(".todo-item p").forEach((todo) =>{
+    todos.push(todo.textContent);
+  });
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function loadTodos(){
+  const savedTodos = JSON.parse(localStorage.getItem("todos")) || []
+  savedTodos.forEach((todo) => addTodo(todo, false))
+}
+
+
+
+
+
+document
+  .querySelector(".todo-input")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const todoText = input.value;
+
+    if (todoText == "") return;
+
+    addTodo(todoText)
+    input.value = "";
+   
   });
