@@ -155,6 +155,7 @@ div.li-text > span.round {
 li.todo-item > button{
   background-color: var(--item-background);
   border: none;
+  cursor: pointer;
 }
 div.footer-list {
   font-size: 15px;
