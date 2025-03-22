@@ -229,3 +229,13 @@ p.message-drag {
     --bg-image: url("./images/bg-desktop-dark.jpg");
   }
 }
+
+.todo-item.completed p {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.round.checked {
+  background: url('./images/icon-check.svg') center no-repeat;
+  background-size: cover;
+}
