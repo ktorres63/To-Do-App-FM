@@ -246,3 +246,7 @@ p.message-drag {
   font-weight: bold;
   color: hsl(192, 100%, 67%);
 }
+.dragging {
+  opacity: 0.6;
+  background: #f0f0f0;
+}

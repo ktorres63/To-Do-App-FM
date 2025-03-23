@@ -1,4 +1,5 @@
 import "./styles.css";
+import Sortable from "sortablejs";
 import sunIcon from "./images/icon-sun.svg";
 import moonIcon from "./images/icon-moon.svg";
 import crossIcon from "./images/icon-cross.svg";
@@ -76,6 +77,8 @@ function renderTodos() {
   .forEach((todo, index) => {
     const li = document.createElement("li");
     li.classList.add("todo-item");
+    li.dataset.index = index;
+
     if (todo.completed) li.classList.add("completed");
     li.innerHTML = ` 
     <div class="li-text">
@@ -91,6 +94,31 @@ function renderTodos() {
     todoList.appendChild(li);
   });
 }
+
+new Sortable(todoList, {
+  animation: 150,
+  ghostClass: "dragging",
+  onEnd: function(evt){
+    const newOrder = [...todoList.children].map(
+      (li) => li.querySelector("p").textContent
+    );
+
+    let nuevoTodos = []
+    for(let i = 0; i< newOrder.length; i++){
+      let textoTarea = newOrder[i];
+
+      let tareaEncontrada = todos.find(function(tarea){
+        return tarea.text === textoTarea
+      });
+
+      if(tareaEncontrada){
+        nuevoTodos.push(tareaEncontrada);
+      }
+    }
+    todos = nuevoTodos;
+    saveAndRender();
+  }
+})
 
 // mark as completed
 
