@@ -3,6 +3,7 @@ import moonIcon from "./images/icon-moon.svg";
 
 const body = document.body;
 const icon = document.getElementById("darkModeIcon");
+localStorage.setItem("dark-mode", "enabled")
 
 // Check if dark mode was previously enabled
 if (localStorage.getItem("dark-mode") == "enabled") {

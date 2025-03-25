@@ -35,9 +35,13 @@ Object.keys(filterButtons).forEach((filter) => {
 
 const todoList = document.getElementById("todoList");
 const clearCompleted = document.getElementById("clearCompleted");
-
+const itemsLeft = document.querySelector(".items-left")
 export function renderTodos() {
   todoList.innerHTML = "";
+
+  const countItems = todos.filter(todo => !todo.completed).length;
+  itemsLeft.textContent = `${countItems} items left`;
+
   todos
     .filter((todo) => {
       if (currentFilter == "active") return !todo.completed;
