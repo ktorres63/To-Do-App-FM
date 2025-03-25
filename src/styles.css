@@ -126,7 +126,7 @@ section.list-container {
 ul#todoList {
   display: flex;
   flex-direction: column;
-  gap: 0.05rem;
+  gap: 2px;
 }
 
 ul#todoList li {
